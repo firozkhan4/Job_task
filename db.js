@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import "dotenv/config"
 
 async function connectDb(){
     try{
-        const conn = await mongoose.connect("mongodb+srv://root:root@cluster0.snbyy.mongodb.net/?appName=Cluster0")
+        const conn = await mongoose.connect(process.en.MONGOURI)
 
         console.log("Connected MongoDb")
     }catch(error){
